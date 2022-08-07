@@ -85,6 +85,8 @@ This repo contains a sample _hello world_ application written in Go in the `hell
 
     `❌ Exiting due to SVC_NOT_FOUND: Service 'prometheus-service' was not found in 'kube-system' namespace. You may select another namespace by using 'minikube service prometheus-service -n <namespace>'. Or list out all the services using 'minikube service list'`
 
+-   Restart the cluster, the `minikube tunnel` works, I can get into the **Prometheus Dashboard**
+
 ---
 
 **Thank you and good luck!**
