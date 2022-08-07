@@ -18,6 +18,12 @@ spec:
             containers:
                 - name: hello
                   image: tinahmgao/go-hello
+                  readinessProbe:
+                      httpGet:
+                          path: /
+                          port: 8080
+                      initialDelaySeconds: 10
+                      periodSeconds: 5
                   ports:
                       - containerPort: 8080
 ---
