@@ -1,0 +1,25 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+    name: alertmanager-config
+    namespace: kube-system
+data:
+    config.yml: |-
+        global:
+        templates:
+        - '/etc/alertmanager/*.tmpl'
+        route:
+          receiver: teams
+          repeat_interval: 30m
+          routes:
+            - receiver: teams
+            # Send severity=teams alerts to teams.
+              match:
+                severity: teams
+              group_wait: 10s
+              repeat_interval: 1m
+
+        receivers:
+        - name: teams
+          webhook_configs:
+          - api_url: https://9spokes.webhook.office.com/webhookb2/42d60780-c647-4a13-867d-0a273bff104b@2abcc5bb-97a6-431e-aa58-27c540baed73/IncomingWebhook/6200cfc5fd3744cf9838be6cb70194f3/ef4e28f0-b9f1-4169-8320-2a70d372596c
