@@ -32,7 +32,7 @@ This repo contains a sample _hello world_ application written in Go in the `hell
 ---
 
 -   🤓 I choose minikube in this challenge
--   📁 I created namespace with the `staging.yml`
+-   📝 I created namespace with the `staging.yml`
 
 ---
 
@@ -44,7 +44,7 @@ This repo contains a sample _hello world_ application written in Go in the `hell
 
 -   🧐 I set `readinessProbe - httpGet` to make sure the pod is in healthy state
 -   ❓ As I run minikube on MacOS, I need to use the `minikube tunnel` to reach the pod, but I failed in such way. [I found similar issue as this Open issue of Minikube](https://www.notion.so/9spokes-devsecops-challenge-ef26b63478494e46a49d3cc345d16bb0#7766584eb72c4f8b9e6932d56cb19b4b)
--   📁 `singlepod.yml`
+-   📝 `singlepod.yml`
 
 ---
 
@@ -55,7 +55,7 @@ This repo contains a sample _hello world_ application written in Go in the `hell
 ---
 
 -   🧐 I use `podAntiAffinity` to make sure the pods are deployed evenly among nodes
--   📁 `multinode.yml`
+-   📝 `multinode.yml`
 
 ---
 
@@ -66,7 +66,7 @@ This repo contains a sample _hello world_ application written in Go in the `hell
 ---
 
 -   🧐 I set `readinessProbe - exec` to check container files
--   📁 `multicontainer.yml`
+-   📝 `multicontainer.yml`
 
 ---
 
@@ -77,7 +77,13 @@ This repo contains a sample _hello world_ application written in Go in the `hell
 
 ---
 
--   🧐 I've found some resources, need more time to complete the task.
+-   I am still working on deploy promethus
+-   🧐 I got stock at:
+
+    if I run `kubectl get svc -n kube-system`, I can get the promethus-service
+    but if I want to use minikube tunnel `minikube service prometheus-service -n kube-system` I got error
+
+    `❌ Exiting due to SVC_NOT_FOUND: Service 'prometheus-service' was not found in 'kube-system' namespace. You may select another namespace by using 'minikube service prometheus-service -n <namespace>'. Or list out all the services using 'minikube service list'`
 
 ---
 
