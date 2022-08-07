@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Pod
+metadata:
+    name: p3
+    namespace: staging
+spec:
+    containers:
+        - name: c1
+          image: tinahmgao/go-hello
+          livenessProbe:
+              exec:
+                  command:
+                      - cat
+                      - /app/ready.txt
+              initialDelaySeconds: 5
+              periodSeconds: 5
+        - name: c2
+          image: tinahmgao/go-hello
+          livenessProbe:
+              exec:
+                  command:
+                      - cat
+                      - /app/ready.txt
+              initialDelaySeconds: 5
+              periodSeconds: 5
+    restartPolicy: Never
